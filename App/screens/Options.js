@@ -1,4 +1,12 @@
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  ScrollView,
+  Alert,
+  Linking,
+} from "react-native";
 import colors from "../constants/colors";
 import { Entypo } from "@expo/vector-icons";
 
@@ -21,10 +29,19 @@ const styles = StyleSheet.create({
   },
 });
 
+const openUrl = (url) => {
+  return Linking.openURL(url).catch(() => {
+    Alert.alert("Oops, Something went wrong!");
+  });
+};
+
 export default Options = () => {
   return (
-    <View>
-      <TouchableOpacity style={styles.row} onPress={() => alert("Options")}>
+    <ScrollView>
+      <TouchableOpacity
+        style={styles.row}
+        onPress={() => openUrl("https://www.facebook.com")}
+      >
         <Text style={styles.text}>Options</Text>
         <Entypo name="chevron-right" size={18} color={colors.green} />
       </TouchableOpacity>
@@ -36,12 +53,12 @@ export default Options = () => {
         <Entypo name="export" size={18} color={colors.green} />
       </TouchableOpacity>
 
-      <Text style={styles.margin} />
+      <View style={styles.margin} />
 
       <TouchableOpacity style={styles.row}>
         <Text style={styles.text}>Using React Native Framework </Text>
         <Entypo name="export" size={18} color={colors.green} />
       </TouchableOpacity>
-    </View>
+    </ScrollView>
   );
 };

@@ -1,18 +1,11 @@
 import { StyleSheet, View, StatusBar } from "react-native";
 import Options from "./screens/Options";
+import Home from "./screens/Home";
 
-export default function App() {
-  console.log("app");
+export default () => <Home />;
 
-  return (
-    <View style={styles.container}>
-      <Options />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    paddingTop: StatusBar.currentHeight,
-  },
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     paddingTop: StatusBar.currentHeight,
+//   },
+// });
