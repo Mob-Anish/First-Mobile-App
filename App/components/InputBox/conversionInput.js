@@ -9,32 +9,33 @@ import colors from "../../constants/colors";
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.green,
+    backgroundColor: colors.white,
+    color: colors.text,
     flexDirection: "row",
     borderRadius: 5,
     marginVertical: 10,
     marginHorizontal: 20,
   },
   containerDisabled: {
-    backgroundColor: colors.offGreen,
+    backgroundColor: colors.border,
   },
   button: {
     padding: 15,
     borderRightWidth: 1,
-    backgroundColor: colors.green,
+    backgroundColor: colors.white,
     borderRightColor: colors.border,
     borderTopLeftRadius: 5,
     borderBottomLeftRadius: 5,
   },
   buttonText: {
-    color: colors.white,
+    color: colors.text,
     fontSize: 18,
     fontWeight: "bold",
   },
   input: {
     padding: 10,
     fontSize: 16,
-    color: colors.white,
+    color: colors.text,
   },
 });
 
@@ -43,7 +44,6 @@ export const ConversionInput = ({ text, onButtonPress, ...props }) => {
 
   if (props.editable === false) {
     containerStyles.push(styles.containerDisabled);
-    console.log(containerStyles);
   }
 
   return (

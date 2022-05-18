@@ -1,6 +1,7 @@
 import { View, StyleSheet, StatusBar, Image, Text } from "react-native";
 // import { Dimensions } from "react-native-web";
 import { ConversionInput } from "../components/InputBox/conversionInput";
+import { Button } from "../components/Button/button";
 import colors from "../constants/colors";
 
 // Screen
@@ -8,7 +9,7 @@ import colors from "../constants/colors";
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.white,
+    backgroundColor: colors.bg,
     flex: 1,
     justifyContent: "center",
   },
@@ -21,8 +22,8 @@ const styles = StyleSheet.create({
     height: 120,
   },
   text: {
-    fontSize: 14,
-    color: colors.green,
+    fontSize: 16,
+    color: colors.white,
     textAlign: "center",
   },
   header: {
@@ -30,7 +31,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
     marginBottom: 20,
-    color: colors.green,
+    color: colors.white,
   },
 });
 
@@ -42,7 +43,7 @@ export default Home = () => {
 
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor={colors.white} />
+      <StatusBar barStyle="light-content" backgroundColor={colors.bg} />
       <View style={styles.logoContainer}>
         <Image
           source={require("../assets/images/icon.png")}
@@ -67,6 +68,7 @@ export default Home = () => {
       <Text style={styles.text}>
         {`1 ${baseCurrency} = ${conversionRate} ${quoteCurrency} as of ${date.getFullYear()}`}
       </Text>
+      <Button text="Reverse Currencies" onPress={() => alert("todo!")} />
     </View>
   );
 };
