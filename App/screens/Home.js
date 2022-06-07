@@ -1,7 +1,15 @@
-import { View, StyleSheet, StatusBar, Image, Text } from "react-native";
+import {
+  View,
+  StyleSheet,
+  StatusBar,
+  Image,
+  Text,
+  TouchableOpacity,
+} from "react-native";
 // import { Dimensions } from "react-native-web";
 import { ConversionInput } from "../components/InputBox/conversionInput";
 import { Button } from "../components/Button/button";
+import { Entypo } from "@expo/vector-icons";
 import colors from "../constants/colors";
 
 // Screen
@@ -11,7 +19,6 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.bg,
     flex: 1,
-    justifyContent: "center",
   },
   logoContainer: {
     justifyContent: "center",
@@ -44,6 +51,7 @@ export default Home = () => {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor={colors.bg} />
+      <Entypo name="cog" size={32} color={colors.white} />
       <View style={styles.logoContainer}>
         <Image
           source={require("../assets/images/icon.png")}
